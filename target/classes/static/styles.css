@@ -1,0 +1,11 @@
+body {
+  min-height: 100vh;
+}
+
+.clickable-row {
+  cursor: pointer;
+}
+
+.clickable-row:hover {
+  background-color: #f1f5f9;
+}
