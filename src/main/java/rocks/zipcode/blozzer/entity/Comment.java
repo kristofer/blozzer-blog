@@ -7,17 +7,16 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "comments")
 public class Comment {
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String content;
-	
+
 	@ManyToOne
 	private Post post;
 
@@ -47,7 +46,5 @@ public class Comment {
 	public void setPost(Post post) {
 		this.post = post;
 	}
-	
-	
-	
+
 }

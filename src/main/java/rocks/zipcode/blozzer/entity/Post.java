@@ -18,14 +18,14 @@ import javax.persistence.OneToMany;
 public class Post {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer postId;
-	@Column(name="post_title", nullable = false, length = 100)
+	@Column(name = "post_title", nullable = false, length = 100)
 	private String title;
-	
+
 	@Column(length = 10000)
 	private String content;
-	
+
 	private String imageName;
 	private Date addedDate;
 
@@ -35,7 +35,7 @@ public class Post {
 
 	@ManyToOne
 	private User user;
-	
+
 	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
 	private Set<Comment> comments = new HashSet<Comment>();
 
